@@ -2,7 +2,7 @@
 
 ## About
 
-RentalMobilKu is an application developed in 2024 by student of Purwadhika. This app is an attempt to help connecting business owner who own renting cars business and travellers who need cars. RentalMobilku offers features both for business owner and customers so they can get the best experience in doing their business, those are:
+RentalMobilKu is an application developed in 2024 by fariz, while enrolled as Purwadhika's student. This app is an attempt to help connecting business owner who own renting cars business and travellers who need cars. RentalMobilku offers features both for business owner and customers so they can get the best experience in doing their business, those are:
 
 **Business Owner**
 
