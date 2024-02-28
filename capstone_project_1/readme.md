@@ -13,7 +13,7 @@ RentalMobilKu is an application developed in 2024 by student of Purwadhika. This
 
 **Customers**
 
-1. **Real All Cars**, RentalMobilKu provides an experience for customers to comfortably see all available cars.
+1. **Read All Cars**, RentalMobilKu provides an experience for customers to comfortably see all available cars.
 2. **Booking Car**, RentalMobilKu offers a way for customers to choose car and reserve them.
 
 ## Installation
