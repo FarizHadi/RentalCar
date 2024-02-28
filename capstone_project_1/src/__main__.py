@@ -4,11 +4,11 @@ from utility import show_records, create_record, read_record, update_record, del
 
 # Database to store data
 car_data = {
-    "RS-MT-01" : {"Manufacturer": "Toyota", "Tipe" : "Rush", "Transmisi" : "MT", "Warna" : "Hitam", "Harga" : 300000000},
-    "HR-AT-01" : {"Manufacturer": "Honda", "Tipe" : "HRV", "Transmisi" : "AT", "Warna" : "Putih", "Harga" : 400000000},
-    "RK-AT-01" : {"Manufacturer": "Daihatsu", "Tipe" : "Rocky", "Transmisi" : "AT", "Warna" : "Merah", "Harga" : 200000000},
-    "TR-MT-01" : {"Manufacturer": "Mitsubishi", "Tipe" : "Triton", "Transmisi" : "MT", "Warna" : "Silver", "Harga" : 350000000},
-    "CR-AT-01" : {"Manufacturer": "Toyota", "Tipe" : "Camry", "Transmisi" : "AT", "Warna" : "Hitam Metalic", "Harga" : 700000000}
+    # "RS-MT-01" : {"Manufacturer": "Toyota", "Tipe" : "Rush", "Transmisi" : "MT", "Warna" : "Hitam", "Harga" : 300000000},
+    # "HR-AT-01" : {"Manufacturer": "Honda", "Tipe" : "HRV", "Transmisi" : "AT", "Warna" : "Putih", "Harga" : 400000000},
+    # "RK-AT-01" : {"Manufacturer": "Daihatsu", "Tipe" : "Rocky", "Transmisi" : "AT", "Warna" : "Merah", "Harga" : 200000000},
+    # "TR-MT-01" : {"Manufacturer": "Mitsubishi", "Tipe" : "Triton", "Transmisi" : "MT", "Warna" : "Silver", "Harga" : 350000000},
+    # "CR-AT-01" : {"Manufacturer": "Toyota", "Tipe" : "Camry", "Transmisi" : "AT", "Warna" : "Hitam Metalic", "Harga" : 700000000}
 }
 
 data_pesanan = {}
@@ -82,13 +82,16 @@ Berikut hal yang dapat anda lakukan :
                             # melihat semua
                             print()
                             if len(car_data) == 0:
-                                print("Database kosong")
+                                print("Database kosong, mohon pastikan data tersedia. Silahkan exit dari program")
                                 continue
                             print("Berikut daftar mobil yang tersedia: ")
                             show_records(car_data)
                             continue
                         elif user_input == '2':    
                             # melihat tertentu
+                            if len(car_data) == 0:
+                                print("Database kosong, mohon pastikan data tersedia. Silahkan exit dari program")
+                                continue
                             nomer_reg_pattern = r'^[A-Za-z]{2}-[A-Za-z]{2}-\d{2}$'
                             user_input = get_input("Masukkan nomer registrasi mobil (contoh: 'TR-MT-01'): ", nomer_reg_pattern)
                             user_input = user_input.upper()   
@@ -225,9 +228,11 @@ Berikut hal yang dapat anda lakukan :
                         user_input = input("Menu 3, masukkan pilihan nomer yang ingin dilakukan: '1' Menu dan '2' Kembali ke Main Menu: ")
                         if user_input == '1':
                             # implementasi poin 1
+                            if len(car_data) == 0:
+                                print("Database kosong, mohon pastikan data tersedia. Silahkan exit dari program")
+                                continue
                             while True: # Selama nomer registrasi tidak sesuai maka user input ulang
                                 print()
-
                                 # Definisi pattern untuk regular expression dan ambil input
                                 nomer_reg_pattern = r'^[A-Za-z]{2}-[A-Za-z]{2}-\d{2}$'
                                 nomer_registrasi = get_input("Silahkan masukkan nomer registrasi yang diinginkan (contoh: 'RS-MT-01'): ", nomer_reg_pattern)
@@ -331,6 +336,9 @@ Berikut hal yang dapat anda lakukan :
                         if user_input == '1':
                             # implementasi penghapusan
                             try:
+                                if len(car_data) == 0:
+                                    print("Database kosong, mohon pastikan data tersedia. Silahkan exit dari program")
+                                    continue
                                 while True:
                                     print()
                                     nomer_reg_pattern = r'^[A-Za-z]{2}-[A-Za-z]{2}-\d{2}$'
@@ -361,6 +369,9 @@ Berikut hal yang dapat anda lakukan :
                                     while True:
                                         try:
                                             user_input = input("Apakah ingin menghapus lagi? (y/n): ").lower().replace(' ','')
+                                            if len(car_data) == 0:
+                                                print("Database kosong, mohon pastikan data tersedia. Silahkan exit dari program")
+                                                break
                                             if user_input in ['y','yes']:
                                                 is_delete_again = True
                                                 break
@@ -449,11 +460,17 @@ Berikut hal yang dapat anda lakukan :
             user_input = input("Main Menu, masukkan pilihan nomer yang ingin dilakukan: '1'-'2' Menu dan '3' Exit: ")
             if user_input == '1':
                 # do read function
+                if len(car_data) == 0:
+                    print("Database kosong, mohon pastikan data tersedia. Silahkan exit dari program")
+                    continue
                 print("Berikut daftar mobil yang tersedia: ")
                 show_records(car_data)
                 continue
             elif user_input == '2':
                 # do order function
+                if len(car_data) == 0:
+                    print("Database kosong, mohon pastikan data tersedia. Silahkan exit dari program")
+                    continue
                 print("Anda akan melakukan pemesanan")
                 while True:
                     try:
