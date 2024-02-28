@@ -4,11 +4,11 @@ from utility import show_records, create_record, read_record, update_record, del
 
 # Database to store data
 car_data = {
-    # "RS-MT-01" : {"Manufacturer": "Toyota", "Tipe" : "Rush", "Transmisi" : "MT", "Warna" : "Hitam", "Harga" : 300000000},
-    # "HR-AT-01" : {"Manufacturer": "Honda", "Tipe" : "HRV", "Transmisi" : "AT", "Warna" : "Putih", "Harga" : 400000000},
-    # "RK-AT-01" : {"Manufacturer": "Daihatsu", "Tipe" : "Rocky", "Transmisi" : "AT", "Warna" : "Merah", "Harga" : 200000000},
-    # "TR-MT-01" : {"Manufacturer": "Mitsubishi", "Tipe" : "Triton", "Transmisi" : "MT", "Warna" : "Silver", "Harga" : 350000000},
-    # "CR-AT-01" : {"Manufacturer": "Toyota", "Tipe" : "Camry", "Transmisi" : "AT", "Warna" : "Hitam Metalic", "Harga" : 700000000}
+    "RS-MT-01" : {"Manufacturer": "Toyota", "Tipe" : "Rush", "Transmisi" : "MT", "Warna" : "Hitam", "Harga" : 300000000},
+    "HR-AT-01" : {"Manufacturer": "Honda", "Tipe" : "HRV", "Transmisi" : "AT", "Warna" : "Putih", "Harga" : 400000000},
+    "RK-AT-01" : {"Manufacturer": "Daihatsu", "Tipe" : "Rocky", "Transmisi" : "AT", "Warna" : "Merah", "Harga" : 200000000},
+    "TR-MT-01" : {"Manufacturer": "Mitsubishi", "Tipe" : "Triton", "Transmisi" : "MT", "Warna" : "Silver", "Harga" : 350000000},
+    "CR-AT-01" : {"Manufacturer": "Toyota", "Tipe" : "Camry", "Transmisi" : "AT", "Warna" : "Hitam Metalic", "Harga" : 700000000}
 }
 
 data_pesanan = {}
@@ -266,7 +266,7 @@ Berikut hal yang dapat anda lakukan :
                                         is_any_update = True
 
                                         key = user_input[i]
-                                        value = get_input(f"Masukkan '{user_input[i].capitalize()}' baru: ", patterns[key])
+                                        value = get_input(f"Masukkan '{user_input[i].capitalize()}' baru (sesuai format daftar): ", patterns[key])
                                         if key == "Transmisi":
                                             updated_features[key] = value.upper().replace(' ','')
                                         if key == "Manufacturer" or key == "Warna" or key == "Tipe":
